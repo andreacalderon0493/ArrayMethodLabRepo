@@ -194,8 +194,19 @@ console.log(`Italian food with serving size greater than 5`, italianFoodAndServi
 
 //4. Create a function that will return only dishes whose id number matches their serving count.
 //Filter
-
-
+function problemFour(){
+    let results;
+    results = dishes.filter(function(el){
+        if(el.id === el.servings){
+            return true;
+        }else{
+            return false;
+        }
+    })
+    return results;
+}
+let idMatchingServingSize = problemFour();
+console.log(`Dish ID matching the servings`, idMatchingServingSize)
 
 //5. Create a function that will return only dishes whose serving count is even.
 //Filter
