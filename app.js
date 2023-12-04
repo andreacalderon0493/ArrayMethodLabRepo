@@ -246,28 +246,54 @@ console.log(`Dishes that include chickpea`, chickpeaDishes)
 //7. Create a function that will prompt the user to type the name of one ingredient. Then use a filter to find all the dishes whose ingredients array INCLUDES that ingredient. Return the new array.
 //Filter
 
+let userIngrediant = prompt("Please enter an ingrediant")
+function ingrediants(userIngrediant){
+    let results;
+    results = dishes.filter(function(el){
+        if(el.ingredients.includes(userIngrediant)){
+            return true;
+        }else{
+            return false; 
+        }
 
+    })
+    return results;
+}
+let userResultIngrediant = ingrediants(userIngrediant);
+console.log(`${userIngrediant} contains dishes`,userResultIngrediant);
 
 //8a. Create a function that will return an array of the string cuisine types. Ie, ["Italian", "Italian", "Mexican", ...]
 //Map
 
-
+let cuisineTypes = dishes.map(function(el){
+    return el.cuisine
+})
+console.log(`All cuisine types:`, cuisineTypes)
 
 //9. Create a function that will return an array of strings, with the cuisine type appended to the start of the dish's name. Ie, ["Italian Pizza", "Italian Spaghetti", ...]
 //Map 
-
+let cuisineDishType = dishes.map(function(el){
+    return el.cuisine + " " + el.name
+})
+console.log(`All cuisine types and name of Dish:`, cuisineDishType )
 
 
 //10. Create a function that will use advanced array methods on the 'dishes' array and return the result ["Vegetarian Lasagna", "Vegetarian Falafel", "Vegetarian Chili"]
 
-
+let vegetarianDish = dishes.filter(function(el){
+    return el.cuisine.includes("Vegetarian");
+}).map(function(el){
+    return "Vegetarian" +" " + el.name;
+});
+console.log(`Vegetarian cuisine and name of Dish:`, vegetarianDish )
 
 
 
 //BONUS
 
 //8b. Use the filter method to eliminate duplicate from problem 8a.
-
+let uniqueCuisineTypes = cuisineTypes.filter((item, index) => cuisineTypes.indexOf(item) === index );
+console.log(`All unique cuisine types`, uniqueCuisineTypes)
 //11. Create a function that will return dishes whose ingredients array INCLUDES "tomato" OR "cheese".
 //Hint: You do not want to check the array's indexes to find out what the array INCLUDES.
 //Filter
