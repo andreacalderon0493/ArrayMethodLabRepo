@@ -211,8 +211,19 @@ console.log(`Dish ID matching the servings`, idMatchingServingSize)
 //5. Create a function that will return only dishes whose serving count is even.
 //Filter
 
-
-
+function problemFive(){
+    let results;
+    results = dishes.filter(function(el){
+        if(el.servings % 2 === 0){
+            return true;
+        } else{
+            return false;
+        }
+    })
+    return results;
+}
+let evenServings = problemFive();
+console.log(`Dishes who has an even servings`, evenServings)
 //6. Create a function that will return dishes whose ingredients array INCLUDES "chickpea".
 //Hint: You do not want to check the array's indexes to find out what the array INCLUDES.
 //Double Hint: Research 'javascript does array include item'
