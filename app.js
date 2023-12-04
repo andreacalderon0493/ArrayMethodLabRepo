@@ -153,7 +153,7 @@ function problemOne(){
     return results;
 }
 let vegetarianFood = problemOne();
-console.log(`Vegetarian food from problem One`, vegetarianFood)
+console.log(`Vegetarian food`, vegetarianFood)
 
 //2. Create a function that will prompt the user to enter a cuisine type and then return all dishes that match that type
 //Filter
@@ -176,7 +176,21 @@ console.log(`${userInput} food`, userCuisine)
 //3. Create a function that will return all dishes with the cuisine type of "Italian" and a serving size greater than 5.
 //Filter
 
+function problemThree(){
 
+    let results;
+    results = dishes.filter(function(element){
+        console.log("element inside problem Three filter". element)
+        if(element.cuisine === "Italian" && element.servings > 5){
+            return true;
+        } else{
+            return false;
+        }})
+
+    return results;
+}
+let italianFoodAndServing = problemThree();
+console.log(`Italian food with serving size greater than 5`, italianFoodAndServing)
 
 //4. Create a function that will return only dishes whose id number matches their serving count.
 //Filter
