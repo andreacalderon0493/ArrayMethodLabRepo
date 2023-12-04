@@ -142,9 +142,18 @@ console.log('mexicanFood from filterExample', mexicanFood)
 function problemOne(){
 
     let results;
+    results = dishes.filter(function(element){
+        console.log("element inside problemOne's filter". element)
+        if(element.cuisine === "Vegetarian"){
+            return true;
+        } else{
+            return false;
+        }})
 
     return results;
 }
+let vegetarianFood = problemOne();
+console.log(`Vegetarian food from problem One`, vegetarianFood)
 
 //2. Create a function that will prompt the user to enter a cuisine type and then return all dishes that match that type
 //Filter
