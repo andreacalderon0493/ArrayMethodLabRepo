@@ -298,7 +298,30 @@ console.log(`All unique cuisine types`, uniqueCuisineTypes)
 //Hint: You do not want to check the array's indexes to find out what the array INCLUDES.
 //Filter
 
+function filteredDishes(){
+    let results;
+    results = dishes.filter(function(el){
+       if (el.ingredients.includes("tomato" || "cheese")){
+        return true;
+       } else{
+        return false;
+       }
+    })
+    return results;
+}
+let tomatoCheeseIngrediants = filteredDishes();
+console.log(`Dishes that include tomato or cheese`, tomatoCheeseIngrediants)
 //12. Create a function that will return the total serving count of all dishes.
 //Must use Reduce, not a loop.
-
+let total = dishes.reduce(function (total, el) {
+    return el.servings + total;
+  }, 0);
+console.log(`The total serving size for these dishes combined are `, total);
 //13. Create a function that will return an array of any objects that do not share a cuisine type with any other objects.
+function uniqueCuisineDishes(dishes) {
+    return dishes.filter(dish => {
+        return !dishes.some(otherDish => otherDish.cuisine === dish.cuisine && otherDish !== dish);
+    });
+ }
+ let uniqueDishes = uniqueCuisineDishes(dishes);
+console.log(`Unique cuisine dishes:`, uniqueDishes);
